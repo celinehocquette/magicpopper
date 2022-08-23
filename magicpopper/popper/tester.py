@@ -192,3 +192,17 @@ class Tester():
             properties['has_complete'] = True if set(saved_bindings_pos[magic_values]) == pos else False
 
         return saved_bindings_pos, properties
+
+    
+    def reduce_inconsistent(self, program):
+        if len(program) < 3:
+            return program
+        for i in range(len(program)):
+            subprog = program[:i] + program[i+1:]
+            if not prog_is_recursive(subprog):
+                continue
+            with self.using(subprog):
+                if self.is_inconsistent(subprog):
+                    return self.reduce_inconsistent(subprog)
+        return program
+

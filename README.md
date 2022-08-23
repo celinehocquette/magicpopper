@@ -1,4 +1,4 @@
-# numerical_experiments
+# learning programs with magic values - experiments
 
 This folder contains the experimental code and data for the paper: [Learning programs with magic values](https://arxiv.org/pdf/2208.03238.pdf)
 
