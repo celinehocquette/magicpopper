@@ -1,0 +1,1 @@
+{"problem_name": "sumk", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 1, "solution": "sumk(A):- my_member(A,C),my_member(A,B),add(B,C,295685200623),magic(295685200623).", "total_exec_time": 109.09992483399999, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

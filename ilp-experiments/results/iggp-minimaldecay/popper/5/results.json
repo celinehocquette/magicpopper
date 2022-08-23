@@ -1,0 +1,1 @@
+{"problem_name": "iggp-minimaldecay", "system_id": ["popper"], "system_name": "popper", "trial": 5, "solution": "next_value(A,B):- c_noop(C),does(A,E,C),my_true_value(A,D),my_succ(B,D),c_player(E).\nnext_value(A,B):- does(A,C,D),c_pressButton(D),c_player(C),c5(B).", "total_exec_time": 2.3167465, "conf_matrix": [2, 0, 16, 0], "parameter": null, "__typ__": "ExperimentResult"}

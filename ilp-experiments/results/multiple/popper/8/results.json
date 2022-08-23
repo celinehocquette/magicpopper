@@ -1,0 +1,1 @@
+{"problem_name": "multiple", "system_id": ["popper"], "system_name": "popper", "trial": 8, "solution": "multiple(A):- div2(A,B),multiple(B).\nmultiple(A):- c1(A).", "total_exec_time": 181.029456792, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

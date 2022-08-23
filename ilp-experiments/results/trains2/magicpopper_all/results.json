@@ -1,0 +1,1 @@
+{"problem_name": "trains2", "system_id": ["magicpopper_all"], "system_name": "popper", "trial": null, "solution": "f(t484):- magic(t484).\nf(A):- has_car(A,B),roof_open(B),two_wheels(B),has_car(A,C),roof_closed(C).", "total_exec_time": 3.8471244999999996, "conf_matrix": [4, 0, 17, 0], "parameter": null, "__typ__": "ExperimentResult"}

@@ -1,0 +1,1 @@
+{"problem_name": "last", "system_id": ["popper"], "system_name": "popper", "trial": 5, "solution": "f(A,B):- head(A,B),tail(A,C),empty(C).\nf(A,B):- tail(A,C),f(C,B).", "total_exec_time": 0.80205975, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

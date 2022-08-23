@@ -1,0 +1,1 @@
+{"problem_name": "next", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 8, "solution": "next_list(A,B):- tail(A,C),next_list(C,B).\nnext_list(A,B):- tail(A,D),head(A,5895792205.234766),head(D,B),magic(5895792205.234766).", "total_exec_time": 26.715850999999997, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

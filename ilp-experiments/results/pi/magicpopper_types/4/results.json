@@ -1,0 +1,1 @@
+{"problem_name": "pi", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 4, "solution": "f(A,B):- square(A,C),magic(3.142),mult(C,3.142,B).", "total_exec_time": 1.231512917, "conf_matrix": [1000, 0, 999, 1], "parameter": null, "__typ__": "ExperimentResult"}

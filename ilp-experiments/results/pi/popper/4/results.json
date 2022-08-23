@@ -1,0 +1,1 @@
+{"problem_name": "pi", "system_id": ["popper"], "system_name": "popper", "trial": 4, "solution": "f(A,B):- mult(A,D,B),add(D,C,B),mult(B,C,A).", "total_exec_time": 600, "conf_matrix": [0, 1000, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

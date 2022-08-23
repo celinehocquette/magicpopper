@@ -1,0 +1,1 @@
+{"problem_name": "drug_design", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 3, "solution": "drug_design(A):- atom(A,B),atom_type(B,o),atom(A,C),bound(C,B,0.217),atom_type(C,h),magic(o),magic(0.217),magic(h).", "total_exec_time": 8.392860834, "conf_matrix": [200, 0, 200, 0], "parameter": null, "__typ__": "ExperimentResult"}

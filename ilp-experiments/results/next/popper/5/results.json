@@ -1,0 +1,1 @@
+{"problem_name": "next", "system_id": ["popper"], "system_name": "popper", "trial": 5, "solution": "next_list(A,B):- tail(A,C),tail(C,E),tail(E,D),head(D,B).", "total_exec_time": 2.150453708, "conf_matrix": [2, 998, 995, 5], "parameter": null, "__typ__": "ExperimentResult"}

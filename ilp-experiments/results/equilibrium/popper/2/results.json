@@ -1,0 +1,1 @@
+{"problem_name": "equilibrium", "system_id": ["popper"], "system_name": "popper", "trial": 2, "solution": "equilibrium(A):- mass(A,B),square(B,C),square(C,B).", "total_exec_time": 206.28050012499997, "conf_matrix": [82, 918, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

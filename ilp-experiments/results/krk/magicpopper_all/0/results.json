@@ -1,0 +1,1 @@
+{"problem_name": "krk", "system_id": ["magicpopper_all"], "system_name": "popper", "trial": 0, "solution": "f(A):- cell(A,G,B,k),cell(A,C,B,r),distance(C,G,1),magic(r),magic(k),magic(1).", "total_exec_time": 32.892934000000004, "conf_matrix": [1000, 0, 959, 41], "parameter": null, "__typ__": "ExperimentResult"}

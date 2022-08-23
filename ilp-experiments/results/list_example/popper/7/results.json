@@ -1,0 +1,1 @@
+{"problem_name": "list_example", "system_id": ["popper"], "system_name": "popper", "trial": 7, "solution": "magic_value(A):- head(A,B),c7(B).\nmagic_value(A):- last(A,B),c7(B).", "total_exec_time": 60, "conf_matrix": [34, 966, 1000, 0], "parameter": 10000, "__typ__": "ExperimentResult"}

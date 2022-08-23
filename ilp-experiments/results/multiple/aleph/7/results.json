@@ -1,0 +1,1 @@
+{"problem_name": "multiple", "system_id": ["aleph"], "system_name": "aleph", "trial": 7, "solution": "multiple(64).\nmultiple(64).\nmultiple(32).\nmultiple(128).\nmultiple(1).\nmultiple(8).\nmultiple(4).\nmultiple(16).\nmultiple(8).\nmultiple(128).\n", "total_exec_time": 0.29327204100000004, "conf_matrix": [673, 327, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

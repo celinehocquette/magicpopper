@@ -1,0 +1,1 @@
+{"problem_name": "list_constant", "system_id": ["magicpopper_args"], "system_name": "popper", "trial": 4, "solution": "magic_value(A):- head(A,c7),magic(c7).\nmagic_value(A):- tail(A,B),magic_value(B).", "total_exec_time": 1.15471025, "conf_matrix": [1000, 0, 1000, 0], "parameter": 4000, "__typ__": "ExperimentResult"}

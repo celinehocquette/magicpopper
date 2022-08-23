@@ -1,0 +1,1 @@
+{"problem_name": "evens", "system_id": ["popper"], "system_name": "popper", "trial": 6, "solution": "f(A):- empty(A).\nf(A):- tail(A,B),head(A,C),even(C),f(B).", "total_exec_time": 1.326088042, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

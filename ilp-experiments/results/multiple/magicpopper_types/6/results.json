@@ -1,0 +1,1 @@
+{"problem_name": "multiple", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 6, "solution": "multiple(A):- div2(A,B),multiple(B).\nmultiple(1):- magic(1).", "total_exec_time": 0.093155333, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

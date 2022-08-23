@@ -1,0 +1,1 @@
+{"problem_name": "trains1", "system_id": ["popper"], "system_name": "popper", "trial": null, "solution": "f(A):- has_car(A,C),three_wheels(C),has_car(A,B),two_wheels(B),long(B).", "total_exec_time": 2.6472744169999998, "conf_matrix": [55, 0, 146, 0], "parameter": null, "__typ__": "ExperimentResult"}

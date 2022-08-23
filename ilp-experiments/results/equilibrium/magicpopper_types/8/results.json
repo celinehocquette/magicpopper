@@ -1,0 +1,1 @@
+{"problem_name": "equilibrium", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 8, "solution": "equilibrium(A):- mass(A,B),force(A,D),sum(D,E),magic(0.1019367991845056),mult(0.1019367991845056,E,B).", "total_exec_time": 118.9458295, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

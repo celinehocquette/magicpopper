@@ -1,0 +1,1 @@
+{"problem_name": "list_append", "system_id": ["magicpopper_args"], "system_name": "popper", "trial": 9, "solution": "magic_value(A):- my_append(D,['aag'],B),tail(A,B),magic(['aag']).", "total_exec_time": 0.475990875, "conf_matrix": [1000, 0, 999, 1], "parameter": 2, "__typ__": "ExperimentResult"}

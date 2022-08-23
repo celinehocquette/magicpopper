@@ -1,0 +1,1 @@
+{"problem_name": "list_append", "system_id": ["metagol"], "system_name": "metagol", "trial": 8, "solution": "% learning magic_value/1\n% clauses: 1\n% clauses: 2\nmagic_value(A):-tail(A,B),magic_value(B).\nmagic_value(A):-head(A,vr).\n", "total_exec_time": 0.06573979200000002, "conf_matrix": [1000, 0, 993, 7], "parameter": 2, "__typ__": "ExperimentResult"}

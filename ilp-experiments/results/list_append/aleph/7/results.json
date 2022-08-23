@@ -1,0 +1,1 @@
+{"problem_name": "list_append", "system_id": ["aleph"], "system_name": "aleph", "trial": 7, "solution": "magic_value([ar,ix,akf,yj,adr,ut,mk,zg,aba,oi,re]).\nmagic_value([el,acq,sb,aap,ach,afm,abl,gi,qx,oi,re]).\nmagic_value(A):-my_append(B,[oi,re],A).\n", "total_exec_time": 3.462706792, "conf_matrix": [879, 121, 1000, 0], "parameter": 2, "__typ__": "ExperimentResult"}

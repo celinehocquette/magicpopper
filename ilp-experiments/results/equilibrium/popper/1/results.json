@@ -1,0 +1,1 @@
+{"problem_name": "equilibrium", "system_id": ["popper"], "system_name": "popper", "trial": 1, "solution": "equilibrium(A):- mass(A,E),square(E,C),substract(C,E,B),substract(B,E,D),mult(D,E,C).\nequilibrium(A):- mass(A,C),square(C,D),div(D,C,B),add(B,C,D).", "total_exec_time": 203.86493825, "conf_matrix": [294, 706, 999, 1], "parameter": null, "__typ__": "ExperimentResult"}

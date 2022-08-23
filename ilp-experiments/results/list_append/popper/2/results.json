@@ -1,0 +1,1 @@
+{"problem_name": "list_append", "system_id": ["popper"], "system_name": "popper", "trial": 2, "solution": "magic_value(A):- my_append(C,E,B),head(E,D),aag(D),tail(A,B).", "total_exec_time": 330.325759125, "conf_matrix": [1000, 0, 993, 7], "parameter": 2, "__typ__": "ExperimentResult"}
