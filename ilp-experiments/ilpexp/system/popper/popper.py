@@ -103,11 +103,5 @@ class PopperTrainSettings:
         self.bias_file = bias_file
         self.stats_file = stats_file
 
-BASIC_POPPER = Popper("../magic_popper", {}, timeout=60)
-# MAGIC_POPPER = Popper("./Popper", {"--debug", 1}, timeout=6)
-MAGIC_POPPER = Popper(
-            install_dir="../magic_popper",
-            settings={'--magic-values': ""},
-            id='magicpopper',
-            timeout=60
-        )
+
+BASIC_POPPER = Popper(install_dir="../magicpopper", settings={}, timeout=60)
