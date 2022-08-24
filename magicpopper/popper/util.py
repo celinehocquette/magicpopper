@@ -224,7 +224,7 @@ def format_rule(rule):
     head_str = ''
     if head:
         head_str = format_literal(head)
-    body_str = ','.join((format_literal(literal) for literal in body))
+    body_str = ','.join((format_literal(literal) for literal in set(body) if not literal.is_magic()))
     if not body_str:
         return f'{head_str}.'
     return f'{head_str}:- {body_str}.'
