@@ -8,7 +8,7 @@ import pkg_resources
 from pyswip import Prolog
 from contextlib import contextmanager
 from . core import Literal, is_magic_program
-from . util import format_rule, order_rule, order_prog, format_prog, rule_is_recursive
+from . util import format_rule, order_rule, order_prog, format_prog, rule_is_recursive, prog_is_recursive
 from . lazy_evaluation import get_value, add_lazy_var_program, binds_lazy_var_program
 
 
