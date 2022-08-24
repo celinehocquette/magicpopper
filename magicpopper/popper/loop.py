@@ -95,6 +95,7 @@ def popper(settings):
 
             settings.stats.total_programs += 1
             settings.logger.debug(f'Program {settings.stats.total_programs}:')
+            settings.logger.debug(format_prog(prog))
 
             k = prog_size(prog)
             if last_size == None or k != last_size:

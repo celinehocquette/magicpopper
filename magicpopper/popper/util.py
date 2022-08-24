@@ -356,16 +356,15 @@ class Settings:
         self.logger = logging.getLogger("popper")
         args = parse_args()
 
-        if quiet:
+        if args.quiet:
             pass
-        elif debug:
+        elif args.debug:
             log_level = logging.DEBUG
             logging.basicConfig(format='%(asctime)s %(message)s', level=log_level, datefmt='%H:%M:%S')
-        elif info:
+        elif args.info:
             log_level = logging.INFO
             logging.basicConfig(format='%(asctime)s %(message)s', level=log_level, datefmt='%H:%M:%S')
 
-        self.debug = args.debug
         self.stats = Stats(info=info, debug=args.debug, stats_file=args.stats_file)
         self.stats.logger = self.logger
 
