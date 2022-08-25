@@ -1,3 +1,7 @@
+
+max_vars(6).
+max_body(5).
+
 head_pred(next_cell,3).
 body_pred(does_jump,4).
 body_pred(my_succ,2).

@@ -48,11 +48,6 @@ direction(my_mult,(in, in, out)).
 %magic_value(my_geq,1).
 %magic_value(my_leq,1).
 
-
-max_magic(6).
-
-magic_value_type(int).
-
 incompatible(my_geq,my_geq).
 incompatible(my_leq,my_leq).
 incompatible(eq,my_geq).

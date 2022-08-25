@@ -1,5 +1,5 @@
 %% different(A,B):- ground(A), ground(B), A\=B.
-does_jump(A,B,C,D):- false.
+does_jump(_,_,_,_):- false.
 
 different(A,B):- my_pos(A), my_pos(B), A \= B.
 c_zerocoins(zerocoins).
