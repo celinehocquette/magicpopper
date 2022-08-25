@@ -85,7 +85,15 @@ In any scenario, MagicPopper runs an automated search and identifies a subset of
 Therefore, Setting 3 (allowing any variable to be a magic value) is more expensive. It is preferable to use Settings 1 or 2 if it is
 known which arguments / types could be magic values.
 
-If using *directions*, it is best to declare arguments which may be constant symbols as input:
+By default, the maximum number of magic values in a clause is 4. You can change this setting by adding the following declaration in the bias file,
+where 'x' is the desired maximum number of magic values per clause:
 ```prolog
-direction(cell,(in, in, in, out)).
+max_magic(x).
 ```
+Alternatively, you can use the command line option --max-magic as follows:
+`python ./magicpopper/popper.py ./magicpopper/examples/{your-folder-name} --max-magic {x}`
+
+The bias file declaration has priority over the command line option.
+
+
+Examples of tasks are provided in ./magicpopper/examples. Tasks which require magic values have a subfolder name which contains 'magic'.
