@@ -224,7 +224,7 @@ def format_rule(rule):
     head_str = ''
     if head:
         head_str = format_literal(head)
-    body_str = ','.join((format_literal(literal) for literal in set(body) if not literal.is_magic()))
+    body_str = ','.join((format_literal(literal) for literal in body if not literal.is_magic()))
     if not body_str:
         return f'{head_str}.'
     return f'{head_str}:- {body_str}.'
@@ -309,10 +309,10 @@ def order_rule(rule):
             if selected_literal == None:
                 message = f'{selected_literal} in clause {format_rule(rule)} could not be grounded'
                 raise ValueError(message)
-        ordered_body.append(selected_literal)
+        if selected_literal not in ordered_body:
+            ordered_body.append(selected_literal)
         grounded_variables = grounded_variables.union(selected_literal.outputs)
         body_literals = body_literals.difference({selected_literal})
-
     return head, tuple(ordered_body)
 
 class DurationSummary:
@@ -361,9 +361,9 @@ class Settings:
         elif args.debug:
             log_level = logging.DEBUG
             logging.basicConfig(format='%(asctime)s %(message)s', level=log_level, datefmt='%H:%M:%S')
-        elif args.info:
-            log_level = logging.INFO
-            logging.basicConfig(format='%(asctime)s %(message)s', level=log_level, datefmt='%H:%M:%S')
+        # elif args.info:
+        #     log_level = logging.INFO
+        #     logging.basicConfig(format='%(asctime)s %(message)s', level=log_level, datefmt='%H:%M:%S')
 
         self.stats = Stats(info=info, debug=args.debug, stats_file=args.stats_file)
         self.stats.logger = self.logger
@@ -403,9 +403,11 @@ class Settings:
         """)
         solver.ground([('bias', [])])
 
+        self.max_body = max_body
         for x in solver.symbolic_atoms.by_signature('max_body', arity=1):
             self.max_body = x.symbol.arguments[0].number
 
+        self.max_vars = max_vars
         for x in solver.symbolic_atoms.by_signature('max_vars', arity=1):
             self.max_vars = x.symbol.arguments[0].number
 
