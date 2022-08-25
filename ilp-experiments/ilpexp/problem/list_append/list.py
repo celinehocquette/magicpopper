@@ -19,7 +19,7 @@ NUM_CONSTANTS = 1000
 
 
 def gen_list(constant_set, min_len):
-    n = random.randint(min_len, MAX_LIST_SIZE + 1)
+    n = random.randint(min_len, MAX_LIST_SIZE)
     return [random.choice(constant_set) for _ in range(n)]
 
 
