@@ -2,7 +2,6 @@
 max_vars(5).
 max_body(3).
 
-max_magic(3).
 
 head_pred(next_value,2).
 body_pred(does,3).
