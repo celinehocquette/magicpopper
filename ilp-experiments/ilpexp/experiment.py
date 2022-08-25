@@ -1,6 +1,6 @@
 from re import S
 from .problem import ALL_PROBLEMS, DEFAULT_PROBLEMS, DEFAULT_LIST_PROBLEMS, MINIMAL_DECAY
-from .system import BASIC_POPPER, MAGIC_POPPER, ALL_BASIC_SYSTEMS, Popper, Metagol, Aleph
+from .system import BASIC_POPPER, ALL_BASIC_SYSTEMS, Popper, Metagol, Aleph
 from .problem.trains import TRAINS1,TRAINS2,TRAINS3,TRAINS4
 from .problem.list import EVENS, SORTED, LAST, MEMBER
 from .problem.iggp import BUTTONS, COINS, MINIMAL_DECAY, ATTRITION, BUTTONS_GOAL, COINS_GOAL
@@ -41,28 +41,28 @@ class Experiment:
 
 MAGIC_POPPER_ALL = Popper(
             install_dir='../magicpopper',
-            settings={"--debug": "", "--stats":""},
+            settings={"--stats":""},
             id='magicpopper_all',
             timeout=600
         )
 
 MAGIC_POPPER_TYPES = Popper(
             install_dir='../magicpopper',
-            settings={"--debug": "", "--stats":""},
+            settings={"--stats":""},
             id='magicpopper_types',
             timeout=600
         )
 
 MAGIC_POPPER_ARGS = Popper(
             install_dir='../magicpopper',
-            settings={"--debug": "", "--stats":""},
+            settings={"--stats":""},
             id='magicpopper_args',
             timeout=600
         )
 
 POPPER = Popper(
             install_dir='../magicpopper',
-            settings={"--debug": "", "--stats":""},
+            settings={"--stats":""},
             id='popper',
             timeout=600
         )
@@ -91,8 +91,8 @@ SUMK = Experiment(systems=[MAGIC_POPPER_ALL, MAGIC_POPPER_TYPES, MAGIC_POPPER_AR
 LIST_CONSTANT = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=DEFAULT_LISTCONSTANT_PROBLEMS, trials=10)
 MD_CONSTANT = Experiment(systems=[MAGIC_POPPER_TYPES], problems=DEFAULT_MDCONSTANT_PROBLEMS, trials=10)
 
-LIST_MAGICVALUE_DIFFCLAUSES = Experiment(systems=[POPPER,MAGIC_POPPER], problems=DEFAULT_LISTVALUES_PROBLEMS, trials=10)
-LIST_MAGICVALUE_SAMECLAUSE = Experiment(systems=[POPPER,MAGIC_POPPER], problems=DEFAULT_MAGICVALUESSAMECLAUSE_PROBLEMS, trials=10)
+LIST_MAGICVALUE_DIFFCLAUSES = Experiment(systems=[POPPER,MAGIC_POPPER_TYPES], problems=DEFAULT_LISTVALUES_PROBLEMS, trials=10)
+LIST_MAGICVALUE_SAMECLAUSE = Experiment(systems=[POPPER,MAGIC_POPPER_TYPES], problems=DEFAULT_MAGICVALUESSAMECLAUSE_PROBLEMS, trials=10)
 
 LIST_EXAMPLE = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=DEFAULT_LISTEXAMPLE_PROBLEMS, trials=10)
 

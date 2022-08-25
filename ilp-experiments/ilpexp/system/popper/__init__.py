@@ -1,1 +1,1 @@
-from .popper import Popper, PopperTrainSettings, BASIC_POPPER, MAGIC_POPPER, generate_bias_file, generate_bk_file
+from .popper import Popper, PopperTrainSettings, BASIC_POPPER, generate_bias_file, generate_bk_file

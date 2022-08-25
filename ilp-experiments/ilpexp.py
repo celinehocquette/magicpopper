@@ -1,7 +1,7 @@
 
 from ilpexp.runner import SimpleRunner
 import ilpexp.experiment as experiment
-from ilpexp.experiment import Experiment, BASIC_POPPER, MAGIC_POPPER
+from ilpexp.experiment import Experiment, BASIC_POPPER
 
 from ilpexp.experiment import MINIMAL_DECAY_EXP, BUTTONS_EXP, COINS_EXP, BUTTONS_GOAL, COINS_GOAL
 from ilpexp.experiment import KRK, POWEROF2, LIST_APPEND

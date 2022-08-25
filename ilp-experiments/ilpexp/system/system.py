@@ -33,13 +33,11 @@ class System:
                 f.flush()
 
             test_file = curr_dir_relative('test.pl')
-            print('test')
             files_to_load = [test_file, test_settings.exs_file, test_settings.bk_file, solution_file.name]
             action = 'print_conf_matrix.'
             
             # TODO(Brad): What should the timeout be here?
             result = call_prolog(action, files_to_load=files_to_load, timeout=600)
-        print(f"\nresult {result}\n")
         return [int(n) for n in result.split(',')] if result else []
 
 class BasicTestSettings:

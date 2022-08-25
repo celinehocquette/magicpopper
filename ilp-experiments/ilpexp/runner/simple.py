@@ -87,9 +87,12 @@ class SimpleRunner:
             for sys in times[name].keys():
                 times_ = times[name][sys]
                 accuracies_ = accuracies[name][sys]
-                print(f"times {times}")
-                tables_times.append([myround(np.mean(times_)), myround(stats.sem(times_))])
-                table_accuracies.append([myround(np.mean(accuracies_)), myround(stats.sem(accuracies_))])
+                if len(times_) > 1:
+                    tables_times.append([myround(np.mean(times_)), myround(stats.sem(times_))])
+                    table_accuracies.append([myround(np.mean(accuracies_)), myround(stats.sem(accuracies_))])
+                else:
+                    tables_times.append([myround(np.mean(times_)), 0])
+                    table_accuracies.append([myround(np.mean(accuracies_)), 0])
                 if len(times_) > 1:
 
                     logger.info(
@@ -107,7 +110,6 @@ class SimpleRunner:
         for problem in accuracies.keys():
             if len(accuracies[problem].keys()) == 2:
                 systems = list(accuracies[problem].keys())
-                print(f"systems {systems}")
                 ttest, pval = ttest_ind(accuracies[problem][systems[0]], accuracies[problem][systems[1]])
                 print(f'accuracies {problem} p-value (mc neymar): {ttest} {pval}')
 
@@ -117,14 +119,11 @@ class SimpleRunner:
 
         for problem in results_dict.keys():
             for sys in results_dict[problem]:
-                print([experiment.output_path, problem, sys])
                 results_file = os.path.abspath(mkfile(os.sep.join([experiment.output_path, problem, sys]),
                                                       "exp_results_combine.json"))
-                print(f"result file {results_file}")
                 write_result(results_file, results_dict[problem][sys])
 
         results_file = os.path.abspath(mkfile(experiment.output_path, "results.json"))
-        print(f"result file {results_file}")
         write_result(results_file, result_list)
 
         logger.info(f"Results for {len(result_list)} instances written to {results_file}")
