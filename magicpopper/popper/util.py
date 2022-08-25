@@ -123,7 +123,7 @@ class Stats:
         self.end = end
 
     def register_prog(self, prog):
-        print(f'Program {self.total_programs}:')
+        self.logger.debug(f'Program {self.total_programs}:')
         for rule in prog:
             self.logger.debug(format_rule(rule))
 
@@ -150,7 +150,7 @@ class Stats:
             self.logger.info(format_rule(rule))
 
     def register_completion(self):
-        print('NO MORE SOLUTIONS')
+        self.logger.debug('NO MORE SOLUTIONS')
         self.final_exec_time = self.total_exec_time()
         if self.solution:
             self.solution.total_exec_time = self.final_exec_time
