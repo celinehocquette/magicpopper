@@ -70,9 +70,7 @@ class Popper(System):
 
         # We give an arbitrary extra 10 seconds to the Popper run_command so Popper can timeout the result itself.
         import sys
-        # could break if the environment contains packages that have custom activation code
-        # https://stackoverflow.com/questions/51819719/using-subprocess-in-anaconda-environment
-        python_cmd = os.path.join(sys.exec_prefix, "bin", "python")
+        python_cmd = sys.executable
         python_file = os.sep.join([self.install_dir, 'popper.py'])
         run_command([python_cmd, python_file], final_settings, timeout=self.timeout + 10)
 
