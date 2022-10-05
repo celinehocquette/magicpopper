@@ -1,0 +1,1 @@
+{"problem_name": "iggp-gt-centipede-next", "system_id": ["magicpopper_types"], "system_name": "popper", "trial": 7, "solution": "next_control(A,white):- true_control(A,black).\nnext_control(A,black):- true_control(A,white).", "total_exec_time": 0.23460116599999997, "conf_matrix": [4, 0, 4, 0], "parameter": null, "__typ__": "ExperimentResult"}

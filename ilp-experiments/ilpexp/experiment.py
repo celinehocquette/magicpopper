@@ -4,6 +4,7 @@ from .system import BASIC_POPPER, ALL_BASIC_SYSTEMS, Popper, Metagol, Aleph
 from .problem.trains import TRAINS1,TRAINS2,TRAINS3,TRAINS4
 from .problem.list import EVENS, SORTED, LAST, MEMBER
 from .problem.iggp import BUTTONS, COINS, MINIMAL_DECAY, ATTRITION, BUTTONS_GOAL, COINS_GOAL
+from .problem.iggp import GT_CENTIPEDE_GOAL, GT_CENTIPEDE_NEXT, GT_CENTIPEDE_LEGAL
 from .problem.list_constant import DEFAULT_LISTCONSTANT_PROBLEMS
 from .problem.krk import KRKProblem
 from .problem.pi import PiProblem
@@ -76,6 +77,9 @@ BUTTONS_EXP = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=[BUTTONS]
 COINS_EXP = Experiment(systems=[MAGIC_POPPER_ALL,MAGIC_POPPER_TYPES,MAGIC_POPPER_ARGS,POPPER], problems=[COINS], trials=10)
 BUTTONS_GOAL = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=[BUTTONS_GOAL], trials=10)
 COINS_GOAL = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=[COINS_GOAL], trials=10)
+GT_CENTIPEDE_GOAL = Experiment(systems=[MAGIC_POPPER_TYPES], problems=[GT_CENTIPEDE_GOAL], trials=10)
+GT_CENTIPEDE_NEXT = Experiment(systems=[MAGIC_POPPER_TYPES], problems=[GT_CENTIPEDE_NEXT], trials=10)
+GT_CENTIPEDE_LEGAL = Experiment(systems=[MAGIC_POPPER_TYPES], problems=[GT_CENTIPEDE_LEGAL], trials=10)
 KRK = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=[KRKProblem], trials=10)
 POWEROF2 = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=MULTIPLE, trials=10)
 LIST_APPEND = Experiment(systems=[MAGIC_POPPER_TYPES,POPPER], problems=DEFAULT_LISTAPPEND_PROBLEMS, trials=10)

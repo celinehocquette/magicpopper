@@ -1,0 +1,1 @@
+{"problem_name": "iggp-gt-centipede-next", "system_id": ["popper"], "system_name": "popper", "trial": 2, "solution": "next_control(A,B):- agent_black(C),true_control(A,C),agent_white(B).\nnext_control(A,B):- agent_white(C),agent_black(B),true_control(A,C).", "total_exec_time": 9.031016416, "conf_matrix": [4, 0, 4, 0], "parameter": null, "__typ__": "ExperimentResult"}
