@@ -14,24 +14,26 @@ NUM_TEST_EXAMPLES = 1000
 
 DEFAULT_NUM_EXAMPLES = [NUM_TRAIN_EXAMPLES, NUM_TRAIN_EXAMPLES, NUM_TEST_EXAMPLES, NUM_TEST_EXAMPLES]
 
-
-MIN=1
-MAX=1000
+MIN = 2
+MAX = 1000
 MAX_N = 10
 
 
 def gen_examples(i, fn):
-        return [fn() for _ in range(i)]
+    return [fn() for _ in range(i)]
+
 
 def gen_pos():
-    n1 = random.randrange(0,MAX_N)
-    return f"multiple({2**n1})"
+    n1 = random.randrange(1, MAX_N)
+    return f"multiple({2 ** n1})"
+
 
 def gen_neg():
-    n = random.randrange(MIN,MAX)
+    n = random.randrange(MIN, MAX)
     while is_pos(n):
         n = random.randrange(MIN, MAX)
     return f"multiple({n})"
+
 
 def is_pos(n):
     if n == 0:
@@ -39,17 +41,17 @@ def is_pos(n):
     if n == 1:
         return True
     if n % 2 == 0:
-        n = n//2
+        n = n // 2
         return is_pos(n)
     return False
 
 
 class Multiple(Problem):
-    
+
     # num_examples is an array of four numbers: the number of positive and negative training examples
     # followed by the number of positive and negative testing examples.
 
-    def __init__(self, num_examples = DEFAULT_NUM_EXAMPLES):
+    def __init__(self, num_examples=DEFAULT_NUM_EXAMPLES):
         super().__init__("multiple")
 
         self.constant_set = range(MIN, MAX)
@@ -80,17 +82,18 @@ class Multiple(Problem):
                 if system.id == 'metagol' or system.id == 'aleph':
 
                     test_settings = BasicTestSettings(
-                    exs_file=self.write_examples(mkdir(data_path, 'test'), pos_test_examples, neg_test_examples),
-                    bk_file=self.bk_file())
+                        exs_file=self.write_examples(mkdir(data_path, 'test'), pos_test_examples, neg_test_examples),
+                        bk_file=self.bk_file())
                 else:
                     test_dir = mkdir(data_path, 'test')
                     shutil.copyfile(os.path.join(data_path, 'bk.pl'), os.path.join(test_dir, 'bk.pl'))
                     test_settings = BasicTestSettings(
-                    exs_file=self.write_examples(test_dir, pos_test_examples, neg_test_examples),
-                    bk_file=os.path.join(test_dir, 'bk.pl')
-                )
+                        exs_file=self.write_examples(test_dir, pos_test_examples, neg_test_examples),
+                        bk_file=os.path.join(test_dir, 'bk.pl')
+                    )
 
-                instances.append(ProblemInstance(self, system, train_settings, test_settings, trial=trial, parameter=self.parameter))
+                instances.append(
+                    ProblemInstance(self, system, train_settings, test_settings, trial=trial, parameter=self.parameter))
 
         return instances
 
@@ -98,7 +101,8 @@ class Multiple(Problem):
         if system.id == "magicpopper_types":
             additionnal_bias = "\nmagic_value_type(number).\n"
         elif system.id == "magicpopper_args":
-            additionnal_bias = "\nmagic_value(multiple, 0).\n"
+            additionnal_bias = "\nmagic_value(div, 1).\n"
+            additionnal_bias += "\nmagic_value(multiple, 0).\n"
         elif system.id == "magicpopper_all":
             additionnal_bias = "\nmagic_value_all.\n"
         elif system.id == "popper":
@@ -109,10 +113,9 @@ class Multiple(Problem):
                 additionnal_bias += f'type(c{c},(number,)).\n'
             for c in self.constant_set:
                 additionnal_bias += f'direction(c{c},(in,)).\n'
-        bias_file = popper.generate_bias_file(data_path, curr_dir_relative("bias.pl"),additional_bias=additionnal_bias)
+        bias_file = popper.generate_bias_file(data_path, curr_dir_relative("bias.pl"), additional_bias=additionnal_bias)
         return bias_file
 
-    
     def write_examples(self, data_path, pos_examples, neg_examples):
         exs_file = mkfile(data_path, 'exs.pl')
 
@@ -140,10 +143,10 @@ class Multiple(Problem):
     def generate_popper(self, system, data_path, pos_examples, neg_examples):
 
         return PopperTrainSettings(
-            exs_file = self.write_examples(data_path, pos_examples, neg_examples),
-            bias_file = self.make_bias_file(data_path, system),
-            bk_file = self.make_bk_file(data_path, system),
-            stats_file = os.path.join(data_path, 'stats.json')
+            exs_file=self.write_examples(data_path, pos_examples, neg_examples),
+            bias_file=self.make_bias_file(data_path, system),
+            bk_file=self.make_bk_file(data_path, system),
+            stats_file=os.path.join(data_path, 'stats.json')
         )
 
     ### ALEPH
@@ -154,17 +157,17 @@ class Multiple(Problem):
         bk_file = curr_dir_relative('bk.pl')
 
         return aleph.gen_aleph_train_settings(
-            output_file, 
+            output_file,
             base_aleph_file,
             bk_file,
-            pos_examples, 
+            pos_examples,
             neg_examples)
 
     ### METAGOL
     def generate_metagol(self, data_path, pos_examples, neg_examples):
         return MetagolTrainSettings(
-            exs_file = self.write_examples(data_path, pos_examples, neg_examples),
-            prim_file = curr_dir_relative('metagol-prims.pl'),
-            bk_file = self.bk_file(),
-            metarules = METARULES_REC_CONSTANT
+            exs_file=self.write_examples(data_path, pos_examples, neg_examples),
+            prim_file=curr_dir_relative('metagol-prims.pl'),
+            bk_file=self.bk_file(),
+            metarules=METARULES_REC_CONSTANT
         )
