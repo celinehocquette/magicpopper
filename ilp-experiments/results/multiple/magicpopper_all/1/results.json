@@ -1,1 +1,1 @@
-{"problem_name": "multiple", "system_id": ["magicpopper_all"], "system_name": "popper", "trial": 1, "solution": "multiple(1):- magic(1).\nmultiple(A):- div2(A,B),multiple(B).", "total_exec_time": 0.0884615, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}
+{"problem_name": "multiple", "system_id": ["magicpopper_all"], "system_name": "popper", "trial": 1, "solution": "multiple(2).\nmultiple(A):- div(A,B,2),multiple(B).", "total_exec_time": 0.107618041, "conf_matrix": [1000, 0, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}

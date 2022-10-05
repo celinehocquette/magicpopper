@@ -1,27 +1,17 @@
 
-
 max_vars(3).
-max_body(3).
+max_body(2).
 
 enable_recursion.
 
 head_pred(multiple,1).
-body_pred(div2,2).
-body_pred(div3,2).
-body_pred(div5,2).
+body_pred(div,3).
 
 type(multiple,(number,)).
-type(div2,(number,number)).
-type(div3,(number,number)).
-type(div5,(number,number)).
-
+type(div,(number,number,number)).
 
 direction(multiple,(in,)).
-direction(div2,(in,out)).
-direction(div3,(in,out)).
-direction(div5,(in,out)).
-body_pred(c1,1).
-body_pred(c2,1).
+direction(div,(in,out,out)).body_pred(c2,1).
 body_pred(c3,1).
 body_pred(c4,1).
 body_pred(c5,1).
@@ -1019,7 +1009,6 @@ body_pred(c996,1).
 body_pred(c997,1).
 body_pred(c998,1).
 body_pred(c999,1).
-type(c1,(number,)).
 type(c2,(number,)).
 type(c3,(number,)).
 type(c4,(number,)).
@@ -2018,7 +2007,6 @@ type(c996,(number,)).
 type(c997,(number,)).
 type(c998,(number,)).
 type(c999,(number,)).
-direction(c1,(in,)).
 direction(c2,(in,)).
 direction(c3,(in,)).
 direction(c4,(in,)).

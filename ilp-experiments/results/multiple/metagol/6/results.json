@@ -1,1 +1,0 @@
-{"problem_name": "multiple", "system_id": ["metagol"], "system_name": "metagol", "trial": 6, "solution": "% learning multiple/1\n% clauses: 1\n% clauses: 2\nmultiple(A):-div2(A,1).\nmultiple(A):-div2(A,B),multiple(B).\n", "total_exec_time": 0.0661454589999999, "conf_matrix": [889, 111, 1000, 0], "parameter": null, "__typ__": "ExperimentResult"}
